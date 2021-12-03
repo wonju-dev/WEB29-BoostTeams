@@ -1,0 +1,25 @@
+get:
+  summary: 팀, 초대 목록 [team-user]
+  tags: [team]
+  responses:
+    201:
+      description: 성공
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/team.yaml#/components/schemas/TeamList'
+    409:
+      description: error
+post:
+  summary: 팀 생성, [team, team-user]
+  tags: [team]
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/team.yaml#/components/schemas/CreateTeam'
+  responses:
+    201:
+      description: 성공
+    409:
+      description: error

@@ -1,0 +1,12 @@
+get:
+  summary: 유저 정보 가져오기
+  tags: [auth]
+  responses:
+    200:
+      description: 성공
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/auth.yaml#/components/schemas/loginRes'
+    401:
+      description: error

@@ -1,0 +1,21 @@
+patch:
+  summary: 권한 변경 [team-user]
+  tags: [team]
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/team.yaml#/components/schemas/TeamId'
+  responses:
+    204:
+      description: 성공
+    409:
+      description: error
+delete:
+  summary: 팀원 강퇴 [team-user]
+  tags: [team]
+  responses:
+    204:
+      description: 성공
+    409:
+      description: error

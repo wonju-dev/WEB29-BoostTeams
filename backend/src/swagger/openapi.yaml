@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: BoostTeams API docs
+  description: BoostTeams의 API 문서입니다
+  license:
+    name: MIT
+servers:
+  - url: https://www.boostteams.kro.kr
+    description: BoostTeams Server
+tags:
+  - name: auth
+    description: Join / Login / Logout
+  - name: schedule
+    description: Calendar Page
+  - name: team
+    description: Team Page
+  - name: user
+    description: User Manage
+paths:
+  # auth
+  /api/auth/login:
+    $ref: './paths/auth/login.yaml'
+  /api/auth/github:
+    $ref: './paths/auth/github.yaml'
+  /api/auth/github/callback:
+    $ref: './paths/auth/callback.yaml'
+  /api/auth/signup:
+    $ref: './paths/auth/signup.yaml'
+  /api/auth/info:
+    $ref: './paths/auth/info.yaml'
+  /api/auth/signout:
+    $ref: './paths/auth/signout.yaml'
+  # schedule
+  /api/schedules:
+    $ref: './paths/schedule/scheduleByTeamId.yaml'
+  /api/schedules/{schedule_id}:
+    $ref: './paths/schedule/scheduleByScheduleId.yaml'
+  # user
+  /api/users:
+    $ref: './paths/user/user.yaml'
+  # team
+  /api/teams:
+    $ref: './paths/team/team.yaml'
+  /api/teams/{teamId}:
+    $ref: './paths/team/user.yaml'
+  /api/teams/{teamId}/users:
+    $ref: './paths/team/users.yaml'
+  /api/teams/{teamId}/invitations:
+    $ref: './paths/team/invite.yaml'
+  /api/teams/{teamId}/users/{userId}:
+    $ref: './paths/team/handleUser.yaml'
